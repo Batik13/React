@@ -1,0 +1,44 @@
+html, body {
+  box-sizing: border-box;
+  font-family: arial;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.app {
+
+}
+
+.car-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.car {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  flex-basis: 170px;
+}
+
+.car__img {
+  border-radius: 2px;
+  margin-bottom: 9px;
+}
+
+.car__name {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.car__price {
+  font-size: 14px;
+}
