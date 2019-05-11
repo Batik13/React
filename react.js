@@ -24,7 +24,8 @@ class App extends React.Component {
       { active: false, name: 'Audi', price: '1500', img: 'http://lorempixel.com/201/200/' },
       { active: false, name: 'Mersedes', price: '2500', img: 'http://lorempixel.com/199/200/' },
       { active: false, name: 'Jaguar', price: '3000', img: 'http://lorempixel.com/200/201/ '}
-    ]
+    ],
+    visible: true
   }
 
   handleActive(name) {
@@ -36,7 +37,16 @@ class App extends React.Component {
     this.setState({ cars })
   }
 
+  toggleHandler() {
+    this.setState({ visible: !this.state.visible })
+  }
+
   renderCars() {
+
+    if (!this.state.visible) {
+      return null
+    }
+    
     return this.state.cars.map(car => {
       return (
         <Car 
@@ -51,6 +61,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
+        <button onClick={() => this.toggleHandler()}>Toggle</button>
+        <hr />
         <div className="car-wrapper">
           { this.renderCars() }
         </div>
