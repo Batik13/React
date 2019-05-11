@@ -28,6 +28,10 @@ img {
   flex-basis: 170px;
 }
 
+.car.active {
+  border: 1px solid red;
+}
+
 .car__img {
   border-radius: 2px;
   margin-bottom: 9px;
