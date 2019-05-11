@@ -25,7 +25,8 @@ class App extends React.Component {
       { active: false, name: 'Mersedes', price: '2500', img: 'http://lorempixel.com/199/200/' },
       { active: false, name: 'Jaguar', price: '3000', img: 'http://lorempixel.com/200/201/ '}
     ],
-    visible: true
+    visible: true,
+    titleApp: 'Title Application'
   }
 
   handleActive(name) {
@@ -39,6 +40,12 @@ class App extends React.Component {
 
   toggleHandler() {
     this.setState({ visible: !this.state.visible })
+  }
+
+  changeTitleHandler(value) {
+    this.setState({
+      titleApp: value
+    })
   }
 
   renderCars() {
@@ -61,7 +68,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <button onClick={() => this.toggleHandler()}>Toggle</button>
+        <h1>{this.state.titleApp}</h1>
+        <button style={{ marginRight: 15 }} onClick={() => this.toggleHandler()}>Toggle</button>
+        <input
+          type="text"
+          placeholder="Change Title"
+          onChange={(event) => this.changeTitleHandler(event.target.value)}
+        />
         <hr />
         <div className="car-wrapper">
           { this.renderCars() }
